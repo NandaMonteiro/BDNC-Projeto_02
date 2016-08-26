@@ -24,6 +24,8 @@ public class Produto implements Serializable{
     private String descricao;
     private double valor;
     private byte [] foto;
+    private double valorComQuantidade;
+    private double qtdeVenda;
 
     public Produto() {
     }
@@ -65,6 +67,27 @@ public class Produto implements Serializable{
 
     public void setFoto(byte[] foto) {
         this.foto = foto;
+    }
+
+    public double getValorComQuantidade() {
+        return valorComQuantidade;
+    }
+
+    public void setValorComQuantidade(double valorComQuantidade) {
+        this.valorComQuantidade = valorComQuantidade;
+    }
+
+    public double getQtdeVenda() {
+        return qtdeVenda;
+    }
+
+    public void setQtdeVenda(double qtdeVenda) {
+        this.qtdeVenda = qtdeVenda;
+    }
+    
+    public double calcularValorComQuantidade(){
+        valorComQuantidade = valor * qtdeVenda;
+        return valorComQuantidade;
     }
     
     public Document toDocument(){

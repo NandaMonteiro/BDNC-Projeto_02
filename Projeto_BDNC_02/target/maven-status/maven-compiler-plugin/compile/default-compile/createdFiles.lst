@@ -1,2 +1,7 @@
-entidades\Cliente.class
+entidades\Carrinho.class
+entidades\Pagamento.class
+entidades\RelTipes.class
 entidades\Endereco.class
+entidades\Cliente.class
+entidades\Compra.class
+entidades\Produto.class

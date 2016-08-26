@@ -88,13 +88,13 @@ public class Cliente implements Serializable{
         this.endereco = endereco;
     }
 
-    private Document toDocument(){
+    public Document toDocument(){
         Document document = new Document("id",id).append("nome", nome).append("email", email)
                 .append("senha",senha).append("cpf", cpf).append("endereco", endereco.toDocument());
         return document;
     }
     
-    private Cliente convertFromDocument(Document document){
+    public Cliente convertFromDocument(Document document){
         this.id = document.getLong("id");
         this.nome = document.getString("nome");
         this.email = document.getString("email");

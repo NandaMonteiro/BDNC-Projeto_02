@@ -16,7 +16,7 @@ public class ConexaoMongo {
     
     private static final String HOST = "localhost";
     private static final int PORT = 27017;
-    private static final String DB_NAME = "ecommerce-bdnc";
+    private static final String DB_NAME = "bdnc-loja";
 
     private static ConexaoMongo uniqInstance;
     private static int mongoInstance = 1;
@@ -25,10 +25,9 @@ public class ConexaoMongo {
     private DB db;
 
     private ConexaoMongo() {
-        //construtor privado
     }
 
-    //garante sempre uma unica instancia
+    //uma unica instancia
     public static synchronized ConexaoMongo getInstance() {
         if (uniqInstance == null) {
             uniqInstance = new ConexaoMongo();
@@ -36,7 +35,7 @@ public class ConexaoMongo {
         return uniqInstance;
     }
 
-    //garante um unico objeto mongo
+    //unico objeto mongo
     public DB getDB() {
         if (mongo == null) {
             mongo = new Mongo(HOST, PORT);

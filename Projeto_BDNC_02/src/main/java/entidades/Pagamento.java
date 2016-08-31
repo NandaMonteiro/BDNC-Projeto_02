@@ -18,7 +18,7 @@ public class Pagamento implements Serializable{
     private String empresa;
     private String titular;
     private int numero;
-    private int codSeguranca;
+    private String codSeguranca;
 
     public Pagamento() {
         this.id = System.currentTimeMillis();
@@ -56,11 +56,11 @@ public class Pagamento implements Serializable{
         this.numero = numero;
     }
 
-    public int getCodSeguranca() {
+    public String getCodSeguranca() {
         return codSeguranca;
     }
 
-    public void setCodSeguranca(int codSeguranca) {
+    public void setCodSeguranca(String codSeguranca) {
         this.codSeguranca = codSeguranca;
     }
     
@@ -76,7 +76,7 @@ public class Pagamento implements Serializable{
         this.empresa = document.getString("empresa");
         this.titular = document.getString("titular");
         this.numero = document.getInteger("numero");
-        this.codSeguranca = document.getInteger("codSeguranca");
+        this.codSeguranca = document.getString("codSeguranca");
         
         return this;
                 

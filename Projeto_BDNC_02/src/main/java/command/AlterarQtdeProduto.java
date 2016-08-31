@@ -7,7 +7,6 @@ package command;
 
 import entidades.Carrinho;
 import entidades.Produto;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,40 +16,33 @@ import service.LojaService;
  *
  * @author NandaPC
  */
-public class AddProdutoCarrinho implements Command{
+public class AlterarQtdeProduto implements Command{
     
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
 
         try {
 
-            Carrinho carrinhoDeCompras = null;
+            Carrinho carrinhoDeCompras;
             String idSessao = request.getSession().getId();
             LojaService lojaService = new LojaService();
 
-            String idSalvo = lojaService.buscarIdSessao();
-            if (idSalvo != null && idSalvo.equals(idSessao)) {
+            if (lojaService.buscarIdSessao().equals(idSessao)) {
                 carrinhoDeCompras = lojaService.buscarCarrinhoDeCompras();
-            }
-
-            if (carrinhoDeCompras == null) {
+                if (carrinhoDeCompras == null) {
+                    carrinhoDeCompras = new Carrinho();
+                }
+            } else {
                 carrinhoDeCompras = new Carrinho();
             }
 
-            List<Produto> produtos = carrinhoDeCompras.getProdutos();
-            long idProduto = Long.parseLong(request.getParameter("idProduto"));
-            Produto produto = null;
-            for (Produto p : produtos) {
-                if (p.getId() == idProduto) {
-                    p.setQtdeVenda(p.getQtdeVenda() + 1);
-                    produto = p;
-                    break;
-                }
-
-            }
-            if (produto == null) {
-                produto = lojaService.buscarProduto(idProduto);
-                produto.setQtdeVenda(1);
+            Produto produto = lojaService.buscarProduto(Long.parseLong(request.getParameter("idProduto")));
+            carrinhoDeCompras.getProdutos().remove(produto);
+            int qtd = Integer.parseInt(request.getParameter("quantidade"));
+            if (qtd == 0) {
+                carrinhoDeCompras = lojaService.removerProdutoCarrinho(carrinhoDeCompras, produto);
+            } else {
+                produto.setQtdeVenda(qtd);
                 carrinhoDeCompras.addProduto(produto);
             }
             

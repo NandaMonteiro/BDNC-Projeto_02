@@ -42,7 +42,7 @@ public class CadastrarCliente implements Command{
             
             request.getSession().setAttribute("cliente", clienteService.buscarPorEmail(cliente.getEmail()));
             
-            RequestDispatcher dispather = request.getRequestDispatcher("");
+            RequestDispatcher dispather = request.getRequestDispatcher("index.html");
             dispather.forward(request, response);
         } catch (Exception ex) {
             ex.printStackTrace();

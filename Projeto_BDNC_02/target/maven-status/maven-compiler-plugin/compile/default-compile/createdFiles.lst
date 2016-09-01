@@ -1,0 +1,10 @@
+service\ClienteService.class
+entidades\Endereco.class
+entidades\Carrinho.class
+entidades\RelTipes.class
+dao\DaoJpa.class
+dao\DaoGrafo.class
+dao\DaoDocumentos.class
+dao\Dao.class
+entidades\Cliente.class
+entidades\Produto.class

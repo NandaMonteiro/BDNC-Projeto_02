@@ -5,7 +5,6 @@
  */
 package servlets;
 
-import command.Command;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -21,14 +20,9 @@ public class Controlador extends HttpServlet{
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        response.setContentType("text/html;charset=UTF-8");
-        Command comando = null;
-        try {
-            comando = (Command) Class.forName("command." + request.getParameter("command")).newInstance();
-            comando.execute(request, response);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } 
+        
+        System.out.println("Tá chegando aqui");
+      
     }
 
     @Override

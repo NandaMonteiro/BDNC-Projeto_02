@@ -17,7 +17,8 @@ import org.bson.Document;
  * @author NandaPC
  */
 @Entity
-public class Cliente implements Serializable{
+public class Cliente implements Serializable {
+
     @Id
     @GeneratedValue
     private long id;
@@ -39,7 +40,7 @@ public class Cliente implements Serializable{
         this.cpf = cpf;
         this.endereco = endereco;
     }
-    
+
     public long getId() {
         return id;
     }
@@ -88,20 +89,26 @@ public class Cliente implements Serializable{
         this.endereco = endereco;
     }
 
-    public Document toDocument(){
-        Document document = new Document("id",id).append("nome", nome).append("email", email)
-                .append("senha",senha).append("cpf", cpf).append("endereco", endereco.toDocument());
+    public Document toDocument() {
+        Document document = new Document("id", id).append("nome", nome).append("email", email)
+                .append("senha", senha).append("cpf", cpf).append("endereco", endereco.toDocument());
         return document;
     }
-    
-    public Cliente convertFromDocument(Document document){
+
+    public Cliente convertFromDocument(Document document) {
         this.id = document.getLong("id");
         this.nome = document.getString("nome");
         this.email = document.getString("email");
         this.senha = document.getString("senha");
         this.cpf = document.getString("cpf");
         this.endereco = document.get("endereco", Endereco.class);
-        
+
         return this;
     }
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "id=" + id + ", nome=" + nome + ", email=" + email + ", senha=" + senha + ", cpf=" + cpf + ", endereco=" + endereco + '}';
+    }
+
 }

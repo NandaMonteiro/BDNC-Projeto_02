@@ -9,6 +9,7 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import org.bson.Document;
 
 /**
@@ -16,6 +17,7 @@ import org.bson.Document;
  * @author NandaPC
  */
 @Entity
+@NamedQuery(name = "produtos.todos", query = "SELECT p FROM Produto p")
 public class Produto implements Serializable{
     
     @Id

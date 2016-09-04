@@ -20,6 +20,7 @@ public class ClienteService {
     private Dao<Cliente> daoCliente = new DaoJpa<>();
 
     public boolean salvar(Cliente cliente) {
+        System.out.println("DAO CLIENTE" + cliente);
         return daoCliente.salvar(cliente);
     }
 
@@ -29,6 +30,7 @@ public class ClienteService {
         try {
             Cliente cliente = daoCliente.consultaSimples("cliente.buscar", parametros);
             if (cliente != null && cliente.getSenha().equals(senha)) {
+                System.out.println("DAO Cliente  " + cliente);
                 return cliente;
             }
             return null;

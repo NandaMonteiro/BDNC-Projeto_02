@@ -10,62 +10,24 @@
             <input type="submit" value="ok">
         </form>
         
-        <form action="CadastrarCliente" method="POST">
+        <form action="LoginCliente" enctype="multipart/form-data" method="POST" >
 
                         <div class="form-group">
-                            <label for="nome">Nome </label>
-                            <input type="text" class="form-control" id="nome" name="nome" autofocus required>
+                            <label for="email">email </label>
+                            <input type="text" class="form-control" id="email" name="email" autofocus required>
                         </div>
 
                         <div class="form-group">
-                            <label for="email">E-mail</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="nome@exemplo.com" required>
+                            <label for="senha">Senha</label>
+                            <input type="password" class="form-control" id="senha" name="senha" autofocus required>
                         </div>
 
                         <br>
 
-                        <div class="form-group">
-                            <label for="senha">Senha</label>
-                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Defina sua senha" required>
-                        </div>
                         
-                        <div class="form-group">
-                            <label for="nome">CPF </label>
-                            <input type="text" class="form-control" id="cpf" name="cpf" autofocus required>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="nome">Rua </label>
-                            <input type="text" class="form-control" id="rua" name="rua" autofocus required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="nome">Numero </label>
-                            <input type="text" class="form-control" id="numero" name="numero" autofocus required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="nome">Bairro </label>
-                            <input type="text" class="form-control" id="bairro" name="bairro" autofocus required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="nome">Cidade </label>
-                            <input type="text" class="form-control" id="cidade" name="cidade" autofocus required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="nome">Estado </label>
-                            <input type="text" class="form-control" id="estado" name="estado" autofocus required>
-                        </div>
-                        
-                        <label>
-                            <input type="checkbox" value="aceito" name="termos" checked>
-                            Li e aceito os <a href="#">Termos de Uso</a>
-                        </label>
-
-                        <button type="submit" class="btn btn-default pull-right ">
-                            Cadastrar
+                        <button type="submit" >
+                            Login
                         </button>
                     </form>
     </body>

@@ -50,16 +50,16 @@ public class CadastrarProduto extends HttpServlet {
                 items = (List<FileItem>) upload.parseRequest(request);
                 
                 Produto produto = new Produto();
-                produto.setFoto(items.get(0).get());
-                produto.setDescricao(items.get(1).getString("UTF-8"));
-                produto.setValor(Double.parseDouble(items.get(2).getString("UTF-8")));
+                produto.setFoto(items.get(2).get());
+                produto.setDescricao(items.get(0).getString("UTF-8"));
+                produto.setValor(Double.parseDouble(items.get(1).getString("UTF-8")));
                 
                 LojaService lojaService = new LojaService();
                 lojaService.salvarProduto(produto);
-                
+                System.out.println("Servlet Produto " + produto);
                 request.getSession().setAttribute("produtos", lojaService.listarProdutos());
                 
-                RequestDispatcher dispather = request.getRequestDispatcher("");
+                RequestDispatcher dispather = request.getRequestDispatcher("index.html");
                 dispather.forward(request, response);
             } catch (Exception ex) {
                 ex.printStackTrace();

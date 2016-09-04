@@ -30,14 +30,17 @@ public class DaoJpa<T> implements Dao<T>{
 
     @Override
     public boolean salvar(T obj) {
+        System.out.println("Dao " + obj);
         EntityTransaction transacao = entityManager.getTransaction();
 
         try {
             transacao.begin();
             entityManager.persist(obj);
+            System.out.println("Persistido" + obj);
             transacao.commit();
             return true;
         } catch (Exception ex) {
+            ex.printStackTrace();
             if (transacao.isActive()) {
                 transacao.rollback();
             }

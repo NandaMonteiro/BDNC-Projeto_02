@@ -46,11 +46,13 @@ public class LoginCliente extends HttpServlet {
             if (cliente != null) {
                 request.getSession().setAttribute("cliente", cliente);
                 lojaService.salvarIdSessao(request.getSession().getId());
-                RequestDispatcher dispather = request.getRequestDispatcher("");
+                RequestDispatcher dispather = request.getRequestDispatcher("index01.html");
+                System.out.println("LOGADO");
+
                 dispather.forward(request, response);
             }
             
-            RequestDispatcher dispather = request.getRequestDispatcher("");
+            RequestDispatcher dispather = request.getRequestDispatcher("index.html");
             dispather.forward(request, response);
         } catch (Exception ex) {
             ex.printStackTrace();

@@ -38,7 +38,7 @@ public class CarregarLoja extends HttpServlet {
         try {
             LojaService lojaService = new LojaService();
             request.getSession().setAttribute("produtos", lojaService.listarProdutos());
-            RequestDispatcher dispather = request.getRequestDispatcher("");
+            RequestDispatcher dispather = request.getRequestDispatcher("index.html");
             dispather.forward(request, response);
         } catch (Exception ex) {
             ex.printStackTrace();

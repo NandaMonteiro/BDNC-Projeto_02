@@ -12,6 +12,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import org.bson.Document;
 
 /**
@@ -24,6 +25,7 @@ public class Carrinho implements Serializable{
     @Id
     @GeneratedValue
     private long id;
+    @Transient
     private int qtdeItens;
     private double valor;
     private List<Produto> produtos;

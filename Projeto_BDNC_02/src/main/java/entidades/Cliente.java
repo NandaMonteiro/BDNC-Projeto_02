@@ -6,9 +6,11 @@
 package entidades;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import org.bson.Document;
 
@@ -17,6 +19,7 @@ import org.bson.Document;
  * @author NandaPC
  */
 @Entity
+@NamedQuery(name = "cliente.buscar", query = "SELECT c FROM Cliente c WHERE c.email = :email")
 public class Cliente implements Serializable {
 
     @Id
@@ -26,7 +29,7 @@ public class Cliente implements Serializable {
     private String email;
     private String senha;
     private String cpf;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
 
     public Cliente() {

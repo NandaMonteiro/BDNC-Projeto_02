@@ -56,6 +56,7 @@ public class CadastrarCliente extends HttpServlet {
             
             ClienteService clienteService = new ClienteService();            
             clienteService.salvar(cliente);
+            System.out.println("Servlet = " + cliente);
             
             request.getSession().setAttribute("cliente", clienteService.buscarPorEmail(cliente.getEmail()));
             

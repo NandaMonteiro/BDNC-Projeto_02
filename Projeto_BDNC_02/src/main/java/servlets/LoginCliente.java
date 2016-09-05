@@ -52,7 +52,7 @@ public class LoginCliente extends HttpServlet {
                 dispather.forward(request, response);
             }
             
-            RequestDispatcher dispather = request.getRequestDispatcher("index.html");
+            RequestDispatcher dispather = request.getRequestDispatcher("index01.html");
             dispather.forward(request, response);
         } catch (Exception ex) {
             ex.printStackTrace();

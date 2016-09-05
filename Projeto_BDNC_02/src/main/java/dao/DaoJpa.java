@@ -107,25 +107,13 @@ public class DaoJpa<T> implements Dao<T>{
                 query.setParameter(parametro, parametros.get(parametro));
             }
         }
+        System.out.println("PASSA AKI ");
+        System.out.println(query.toString());
         return (T) query.getSingleResult();
     }
 
     public EntityManager getEntityManager() {
         return entityManager;
     }
-
-//    @Override
-//    public List<T> consultaLista(String consulta, Map<String, Object> parametros) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//
-//    @Override
-//    public T consultaSimples(String consulta, Map<String, Object> parametros) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//    
-    
-
-    
     
 }

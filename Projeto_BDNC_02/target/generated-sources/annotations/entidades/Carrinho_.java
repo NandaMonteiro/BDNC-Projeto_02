@@ -6,7 +6,7 @@ import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-09-04T01:16:59")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-09-04T10:42:27")
 @StaticMetamodel(Carrinho.class)
 public class Carrinho_ { 
 

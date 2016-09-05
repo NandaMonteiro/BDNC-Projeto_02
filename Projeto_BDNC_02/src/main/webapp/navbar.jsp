@@ -21,7 +21,7 @@
                 <li><a class="opcao" href="index.jsp">Home</a></li>
                 <li>
                     <a href="meucarrinho.jsp">
-                        <img src="imagens/shopping-cart.png" height="35" width="35">(${carrinho.qtdItens})
+                        <img src="resources/img/shopping-cart.png" height="35" width="35">(${carrinho.qtdItens})
                     </a>
                 </li>
             </ul>

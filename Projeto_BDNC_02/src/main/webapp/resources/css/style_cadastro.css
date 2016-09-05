@@ -104,11 +104,52 @@ a,a:hover{
 .linksMenu:hover{
     color:rgb(0,191,255);
 }
-ul{
+.listaMenu{
     list-style: none;
 }
 
 .valorProduto{
     color: rgb(0,191,255);
     font-weight: bold;
+}
+/*end*/
+
+/*Begin detalhesProduto*/
+.detalhesproduto{
+    background-color: white;
+    margin: 70px 0px 20px 137px;
+    padding: 20px 0px 20px 10px;
+}
+
+.sugestao{
+    background-color: white;
+    margin: 10px 0px 70px 137px;
+}
+
+.addCarrinho{
+    margin-top: 20px;
+}
+/*end*/
+
+/*Begin fecharPedido*/
+.container{
+    margin-top: 70px;
+}
+.endereco{
+    background-color: white;
+    margin-right: 30px;
+    margin-left: 140px;
+    padding-left: 30px;
+}
+
+.pagamento{
+    background-color: white;
+    padding: 20px;
+}
+/*end.*/
+
+/*Begin carrinho*/
+.conteudoCarrinho{
+    background-color: white;
+    padding-bottom: 20px;
 }

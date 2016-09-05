@@ -17,28 +17,14 @@ and open the template in the editor.
     </head>
     <body>
         <header>
-            <div class="navbar navbar-fixed-top navbarIndex" role="navigation">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand brand" href="index.html">BoaCompra.com</a>
-                    </div>
-                    <div class="navbar-collapse collapse">
-                        <a href="login.html" class="navbar-text">Olá, Visitante! Entre ou Cadastre-se!</a>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a class="opcao" href="cadastrodeproduto.xhtml">Cadastrar Produto</a></li>
-                            <li><a class="opcao" href="venda.xhtml">Loja</a></li>
-                            <li><a class="opcao" href="carrinho.xhtml">Meu Carrinho</a></li>
-                            <li><a class="opcao" href="pedidos.xhtml">Pedidos Realizados</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+             <c:choose>
+                <c:when test="${cliente == null}">
+                    <%@include file="navbar.jsp" %>
+                </c:when>
+                <c:when test="${cliente != null}">
+                    <%@include file="navbarLogado.jsp" %>
+                </c:when>
+            </c:choose>
         </header>
 
         <div class="container" >

@@ -1,3 +1,11 @@
+<%-- 
+    Document   : fecharPedido
+    Created on : 05/09/2016, 20:01:38
+    Author     : Priscila Gouveia <priscilaggouveia@gmail.com>
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.

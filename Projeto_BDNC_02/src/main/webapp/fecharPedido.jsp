@@ -36,7 +36,7 @@ and open the template in the editor.
         </header>
 
         <div class="container conteudo" >
-            <div class="col-md-5 endereco">
+            <div class="col-md-6 endereco">
                 <h2>Revisão</h2><br>
 
                 <h3>Endereço de entrega</h3><br>
